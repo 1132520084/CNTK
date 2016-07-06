@@ -645,7 +645,7 @@ const std::wstring ivector = L"Simple_Test=[reader=[\n"
 BOOST_AUTO_TEST_CASE(HTKMLFNoIVectorSimple)
 {
     HelperRunReaderTest<double>(
-        testDataPath() + "/Config/HTKMLFReaderIVectorSimple_Config.cntk",
+        testDataPath() + "/Config/HTKMLFReaderNoIVectorSimple_Config.cntk",
         testDataPath() + "/Control/HTKMLFReaderNoIVectorSimple_Control.txt",
         testDataPath() + "/Control/HTKMLFReaderNoIVectorSimple_Output.txt",
         "Simple_Test",
@@ -673,11 +673,7 @@ BOOST_AUTO_TEST_CASE(HTKMLFIVectorSimple)
         2,
         1,
         0,
-        1,
-        false,
-        false,
-        true,
-        { ivector });
+        1);
 };
 
 BOOST_AUTO_TEST_CASE(HTKMLFIVectorSequenceSimple)
@@ -698,10 +694,7 @@ BOOST_AUTO_TEST_CASE(HTKMLFIVectorSequenceSimple)
         false,
         false,
         true,
-        {
-            L"frameMode=false",
-            ivector
-        });
+        { L"frameMode=false" });
 };
 
 BOOST_AUTO_TEST_CASE(HTKMLFIVectorBpttSimple)
@@ -722,11 +715,7 @@ BOOST_AUTO_TEST_CASE(HTKMLFIVectorBpttSimple)
         false,
         false,
         true,
-        {
-            L"frameMode=false",
-            L"truncated=true",
-            ivector
-        });
+        { L"frameMode=false", L"truncated=true" });
 };
 
 BOOST_AUTO_TEST_SUITE_END()
